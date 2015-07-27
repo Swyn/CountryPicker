@@ -87,22 +87,22 @@
         for (NSString *code in [NSLocale ISOCountryCodes])
         {
             if ([code isEqualToString:@"BE"] || [code isEqualToString:@"BG"] || [code isEqualToString:@"CZ"] || [code isEqualToString:@"DK"] || [code isEqualToString:@"DE"] || [code isEqualToString:@"EE"] || [code isEqualToString:@"IE"] || [code isEqualToString:@"EL"] || [code isEqualToString:@"ES"] || [code isEqualToString:@"FR"] || [code isEqualToString:@"HR"] || [code isEqualToString:@"IT"] || [code isEqualToString:@"CY"] || [code isEqualToString:@"LV"] || [code isEqualToString:@"LT"] || [code isEqualToString:@"LU"] || [code isEqualToString:@"HU"] || [code isEqualToString:@"MT"] || [code isEqualToString:@"NL"] || [code isEqualToString:@"AT"] || [code isEqualToString:@"PL"] || [code isEqualToString:@"PT"] || [code isEqualToString:@"RO"] || [code isEqualToString:@"SI"] || [code isEqualToString:@"SK"] || [code isEqualToString:@"FI"] || [code isEqualToString:@"SE"] || [code isEqualToString:@"UK"]) {
-                 NSString *countryName = [[NSLocale currentLocale] displayNameForKey:NSLocaleCountryCode value:code];
+                NSString *countryName = [[NSLocale currentLocale] displayNameForKey:NSLocaleCountryCode value:code];
                 
                 namesByCode[code] = countryName ?: code;
             }
             _countryNamesByCode = [namesByCode copy];
         }
-
+        
     }
-           
-//            
-//            //workaround for simulator bug
-//            if (!countryName)
-//            {
-//                countryName = [[NSLocale localeWithLocaleIdentifier:@"en_US"] displayNameForKey:NSLocaleCountryCode value:code];
-//            }
- 
+    
+        //
+        //            //workaround for simulator bug
+        //            if (!countryName)
+        //            {
+        //                countryName = [[NSLocale localeWithLocaleIdentifier:@"en_US"] displayNameForKey:NSLocaleCountryCode value:code];
+        //            }
+    
     return _countryNamesByCode;
 }
 
